@@ -8,15 +8,15 @@ class Renderer
   end
 
   def self.result(message)
-    Renderer.new_line
-    Renderer.new_line
-    Renderer.separator
-    Renderer.new_line
+    new_line
+    new_line
+    separator
+    new_line
 
     puts message
     
-    Renderer.new_line
-    Renderer.separator
-    Renderer.new_line
+    new_line
+    separator
+    new_line
   end
 end

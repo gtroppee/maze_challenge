@@ -4,4 +4,4 @@ require_relative 'challenge/path'
 require_relative 'challenge/generation'
 require_relative 'challenge/renderer'
 
-Maze.new(source: 2, target: 500).solve
+Maze.new(source: 2, target: 50).solve
