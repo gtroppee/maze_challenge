@@ -26,8 +26,7 @@ RSpec.describe Generation do
   end
 
   it '#successful_paths' do
-    gen1 = Generation.new(@paths)
-    expect(gen1.successful_paths.size).to eq(0)
+    expect(@generation.successful_paths.size).to eq(0)
 
     gen2 = Generation.new(@paths)
     gen2.paths << Path.new(6,6)
