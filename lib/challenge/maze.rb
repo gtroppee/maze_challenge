@@ -3,7 +3,10 @@ class Maze
   # Constructor
   # @param [Integer] the starting point for this Maze instance
   # @param [Integer] the target for this Maze instance
-  def initialize(source:, target:)
+  def initialize(source, target)
+    if source == target
+      raise ArgumentError, "The source and the target must be different."
+    end
     @source, @target = source, target
     @starting_paths = [Path.new(@source, @target)]
   end
