@@ -19,15 +19,20 @@ RSpec.describe Generation do
 
   it '#target_reached?' do
     expect(@generation.target_reached?).to be_falsy
-    @generation.paths << Path.new(6,6)
-    expect(@generation.target_reached?).to be_truthy
+
+    gen1 = Generation.new(@paths)
+    gen1.paths << Path.new(6,6)
+    expect(gen1.target_reached?).to be_truthy
   end
 
   it '#successful_paths' do
-    expect(@generation.successful_paths.size).to eq(0)
-    @generation.paths << Path.new(6,6)
-    @generation.paths << Path.new(6,6)
-    expect(@generation.successful_paths.size).to eq(2)
+    gen1 = Generation.new(@paths)
+    expect(gen1.successful_paths.size).to eq(0)
+
+    gen2 = Generation.new(@paths)
+    gen2.paths << Path.new(6,6)
+    gen2.paths << Path.new(6,6)
+    expect(gen2.successful_paths.size).to eq(2)
   end
 
   it '#to_s' do

@@ -18,11 +18,11 @@ class Generation
   # Retrieve a list of all the sucessful paths for this generation
   # @return [Array] the sucessful paths
   def successful_paths
-    @paths.select(&:target_reached?)
+    @successful_paths ||= @paths.select(&:target_reached?)
   end
 
   def target_reached?
-    @paths.any?(&:target_reached?)
+    successful_paths.any?
   end
 
   def to_s
